@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+
+@theme {
+  /* =======================
+     Brand Colors
+     These are the core colors of your website’s brand identity.
+  ======================= */
+  --color-primary: #ffffff; /* Main background or primary surfaces */
+  --color-secondary: #2563eb; /* Dark color for footer, or emphasis */
+  --color-tertiary: #f9fafb; /* Light neutral background for sections/cards */
+
+  /* =======================
+     Text Colors
+     Used for primary and secondary text elements.
+  ======================= */
+  --color-text-primary: #2563eb; /* Main text or headline color */
+  --color-text-secondary: #4b5563; /* Subtext, descriptions, or muted text */
+
+  /* =======================
+     Font Families
+     Define typography hierarchy for headings and body text.
+  ======================= */
+  --font-playfair: 'Playfair Display', Georgia, serif; /* Elegant serif for headings */
+  --font-sans: 'Source Sans Pro', system-ui, sans-serif; /* Clean sans-serif for body text */
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply text-text-secondary bg-gray-50 font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-playfair text-primary;
+  }
+
+  /* HTML: <div class="loader"></div> */
+  .loader {
+    width: 1rem;
+    padding: 4px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #2563eb;
+    --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+    mask: var(--_m);
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
+    animation: l3 1s infinite linear;
+  }
+  @keyframes l3 {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  .ql-editor h1,
+  .ql-editor h2,
+  .ql-editor h3,
+  .ql-editor p {
+    @apply text-text-secondary;
+  }
+}
